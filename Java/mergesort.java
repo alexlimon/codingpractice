@@ -6,7 +6,8 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+
+public class MergeSort {
 
     //sort will call merge sort and process the array appropriately.
     static void sort(int[] prices) {
@@ -50,35 +51,22 @@ public class Solution {
                 leftP++;
             }
     }
-        
-
-    private static final Scanner scanner = new Scanner(System.in);
+    
 
     public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        String[] nk = scanner.nextLine().split(" ");
+        //enter your array here.
+        int[] prices = {4, 34, 5, 43 ,1 , 53};
 
-        int n = Integer.parseInt(nk[0]);
-        
-        // we call the array prices to give it some sort of purpose i guess..
-        int[] prices = new int[n];
-
-        String[] pricesItems = scanner.nextLine().split(" ");
-        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-        for (int i = 0; i < n; i++) {
-            int pricesItem = Integer.parseInt(pricesItems[i]);
-            prices[i] = pricesItem;
-        }
+        System.out.println("Unsorted: "+ Arrays.toString(prices));
 
         sort(prices);
 
-        bufferedWriter.write(String.valueOf(Arrays.toString(prices)));
-        bufferedWriter.newLine();
-
-        bufferedWriter.close();
-
-        scanner.close();
+        System.out.println("Sorted: " + Arrays.toString(prices));
+       
     }
+
+
 }
+
+
